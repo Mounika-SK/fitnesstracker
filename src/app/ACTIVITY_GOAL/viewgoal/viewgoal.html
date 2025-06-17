@@ -1,0 +1,35 @@
+<form>
+     <label for="userId">Enter a User Id</label>
+    <input [(ngModel)]="userId" id="userId" name="userId" type="number">
+    <br><br>
+    <button (click)="viewgoals()">Search</button>
+    <div *ngIf="goals">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Target Steps</th>
+                    <th>Target Calories</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of goals">
+                    <td>{{a.id}}</td>
+                    <td>{{a.targetSteps}}</td>
+                    <td>{{a.targetCalories}}</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+        
+
+    </div>
+    <br><br>
+
+</form>
+
+
+
+
+   

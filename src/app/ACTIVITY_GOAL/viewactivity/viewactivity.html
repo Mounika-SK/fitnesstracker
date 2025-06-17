@@ -1,0 +1,41 @@
+<form>
+     <label for="userId">Enter a User Id</label>
+    <input [(ngModel)]="userId" id="userId" name="userId" type="number">
+    <br><br>
+    <button (click)="viewactivitiesbyid()">Search</button>
+    <br><br>
+    <h3>ACTIVITES OF USER</h3>
+    <div *ngIf="activities">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>STEPS</th>
+                    <th>DISTANCE</th>
+                    <th>CALORIES BURNED</th>
+                    <th>USER ID</th>
+                    <th>DATE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of activities">
+                    <td>{{a.id}}</td>
+                    <td>{{a.steps}}</td>
+                    <td>{{a.distance}}</td>
+                    <td>{{a.caloriesBurned}}</td>
+                    <td>{{a.userId}}</td>
+                    <td>{{a.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+    </div>
+    <br><br>
+
+</form>
+
+
+
+
+   

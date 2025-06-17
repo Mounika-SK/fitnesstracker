@@ -1,0 +1,35 @@
+<form>
+     <label for="searchId">Enter a User Id</label>
+    <input [(ngModel)]="searchId" id="searchId" name="searchId" type="number">
+    <br><br>
+    <button (click)="profilebyuserid()">Search</button>
+    <div *ngIf="profile">
+        <p><strong>Profile Id:</strong>{{profile.id}}</p>
+        <p><strong>Age:</strong>{{profile.age}}</p>
+        <p><strong>Height:</strong>{{profile.height}}</p>
+        <p><strong>Weight:</strong>{{profile.weight}}</p>
+        <br><br>
+        <button (click)="editprofile(profile)">Edit</button>
+
+    </div>
+    <br><br>
+    <div>
+        <form>
+            <div *ngIf="selectedprofile">
+                <label for="age">Age</label>
+                <input [(ngModel)]="selectedprofile.age" id="age" name="age" type="number">
+                 <br><br>
+                <label for="height">Height</label>
+                <input [(ngModel)]="selectedprofile.height" id="height" name="height" type="number">
+                <br><br>
+                <label for="name">Weight</label>
+                <input [(ngModel)]="selectedprofile.weight" id="weight" name="weight" type="number">
+                <br><br>
+                <button (click)="updateprofile()">Submit</button>
+                
+
+            </div>
+        </form>
+    </div>
+
+</form>
